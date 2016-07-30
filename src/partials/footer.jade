@@ -1,0 +1,58 @@
+section.footer(style='background-image: url("img/images/footer-bg.jpg")')
+	.main-container
+		.brand-holder
+				a(href="#")
+					span boards.ck.ua
+		.inline-holder
+			.gotquestion.inline-el
+				h5 
+					|Осталсь вопросы? </br> вы всегда можете с нами связаться
+				.button-holder
+					a(href="#").button Связаться с нами
+			.foot-menu.inline-el
+				h5 Меню:
+				ul
+					mixin newfootlist(name)
+						li 
+							a(href="#")= name
+
+					+newfootlist('БОРДЫ')
+					+newfootlist('РЕКЛАМА В ТРАНСПОРТЕ')
+					+newfootlist('ПЕЧАТЬ БАНЕРОВ')
+					+newfootlist('ДИЗАЙН')
+					+newfootlist(' ПРОМОАКЦИИ')
+			.contacts.inline-el
+				h5 Наши контакты
+				p Украина, г.Черкассы, бул. Щевченка 266/3
+				span tel:
+				a(href="#") +380 093 25 7556
+				br
+				span email:
+				a(href="#") boards.ck.ua
+
+		.foot-socials
+			ul.inline-holder
+				mixin newsocitem(class1)
+					li
+						a(href="#")
+							i.fa(class= class1)
+				+newsocitem('fa-facebook')
+				+newsocitem('fa-twitter')
+				+newsocitem('fa-google-plus')
+				+newsocitem('fa-linkedin')
+		
+		.copyright
+			a(href="#") Copyright @2016 boards.ck.ua
+
+
+
+ 
+
+
+
+
+				
+
+
+
+

@@ -1,0 +1,395 @@
+$medium: 1150px
+$tablet: 1000px
+$mobile-large: 760px
+$mobile-medium: 630px
+$mobile-medium-small: 580px
+$mobile-small: 480px
+$mobile-x-small: 320px
+$main-color: #ffd500
+
+
+$red: #ff5a5f
+
+
+// /Global/
+*
+	box-sizing: border-box
+.chromeperfectpixel-initial-block iframe,
+#chromeperfectpixel-supported-by
+	display: none !important
+#__bs_notify__ 
+	display: none !important
+	opacity: 0 !important
+a
+	color: inherit
+	&:hover
+		color: inherit
+// body
+// 	background: #E4E1E1
+body::-webkit-scrollbar
+	height: 0
+	width: 0
+	font-family: CenturyGothic
+body 
+	margin: 0
+	font-family: GothamPro
+
+.ellipsis-text
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+a 
+	text-decoration: none
+	font-family: inherit
+h3,
+h4
+	font-family: GothamPro
+	font-size: 50px
+	line-height: 50px
+	text-transform: uppercase
+	color: #2d4170
+	margin-top: 0px
+	letter-spacing: -2.2px
+	.red
+		color: $red
+	&.big
+		font-size: 60px
+		line-height: 60px
+h4
+	font-size: 30px
+ul 
+	padding-left: 0
+	li
+		list-style: none
+.clearfix 
+    zoom: 1
+
+.clearfix:before,
+.clearfix:after 
+    content: ""
+    display: table
+
+.clearfix:after 
+    clear: both
+
+ul.pagination
+	text-align: center
+	margin-top: 30px !important
+	margin-bottom: 30px	!important
+	li
+		display: inline-block
+		a
+			display: inline-block
+			font-size: 13px
+			color: #81bb41
+			height: 25px
+			padding-left: 9px
+			padding-right: 9px
+			padding-top: 6px
+			&.active
+				background: #81bb41
+				color: #fff
+.shadow
+	content: ''
+	position: absolute
+	width: 100%
+	height: 100%
+	background: #000000
+	opacity: 0.4
+	left: 0
+	top: 0
+
+.gray-bg
+	background: #fafafa
+.border-bt
+	border-bottom: 1px solid #e2e2e2
+.inline-holder
+	font-size: 0
+	letter-spacing: 0
+	.inline-el
+		display: inline-block
+		vertical-align: top
+		font-size: 16px
+
+// image-holder
+.image-holder
+	overflow: hidden
+	position: relative
+	text-align: center
+	vertical-align: middle
+	img
+		vertical-align: middle
+		width: 100%
+	.fake-img
+		opacity: 0.001
+		position: relative
+		height: 100%
+		width: 100%
+		z-index: 1
+		pointer-events: none
+	.img
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: cover
+		height: 100%
+		left: 0
+		position: absolute
+		right: 0
+		top: 0
+
+.main-container
+	max-width: 1555px
+	width: 100%
+	margin: 0 auto
+	position: relative
+	@media (max-width: $medium)
+		padding-left: 15px	
+		padding-right: 15px
+.btn-holder
+	text-align: center
+	&.white
+		.button
+			border-color: $red
+			color: $red
+			padding-top: 13px
+			&:hover
+				border-color: $red
+
+.button
+	color: $red
+	font-size: 14px
+	font-weight: 700
+	text-transform: uppercase
+	padding: 10px
+	border: 2px solid $red
+	transition: background, color .2s
+	display: inline-block
+	padding-top: 13px
+	&:hover
+		color: #fff
+		background: $red
+		transition: background, color .2s
+.section-icon
+	text-align: center
+	margin-bottom: 120px
+	img
+		display: inline-block
+
+
+.top-line
+	background-size: cover
+	background-repeat: no-repeat
+	.btn-holder
+		margin-top: 58px
+		.button
+			width: 270px
+			height: 50px
+			margin-left: 15px
+			margin-right: 15px
+			font-size: 18px
+			text-transform: uppercase
+	&.index
+		padding-bottom: 260px
+
+.brand-holder
+	position: absolute
+	top: 18px
+	left: 83px
+	color: #ffffff
+	font-family: GenplanFree
+	font-size: 20px
+	line-height: 20px
+	text-transform: uppercase
+
+.main-nav-holder 
+	text-align: right
+	color: white
+	padding-right: 19px
+	font-family: GothamPro
+	font-size: 18px
+	font-weight: 700
+	line-height: 20px
+	margin: 0
+	li
+		a
+			vertical-align: top
+			font-size: 16px
+			text-align: center
+			height: 60px
+			padding: 18px 11px
+			transition: color .2s
+			&:hover
+				color: $red
+				transition: color .2s
+
+	.callback-holder
+		padding-right: 17px
+		position: relative
+		margin-right: 0px
+		font-size: 15px
+		text-transform: uppercase
+		img
+			position: absolute
+			top: -5px
+			right: 8px
+
+	.menu-holder
+		padding-right: 65px
+		position: relative
+		font-size: inherit
+		text-transform: uppercase
+		img
+			position: absolute
+			top: -4px
+			right: 8px
+
+.description-in-top
+	text-align: center
+	margin-top: 100px
+	h1
+		color: white
+		font-family: GenplanFree
+		font-size: 50px
+		line-height: 50px
+		font-weight: normal
+		margin-bottom: 21px
+		&.index																																	
+			font-size: 70px
+			margin-top: 200px
+			margin-bottom: 79px
+	h2
+		color: white
+		font-family: GothamPro
+		font-size: 30px
+		margin-top: 11px
+	.rope-icons
+		img
+			margin-bottom: 10px
+
+	
+
+.minidescription
+	padding-top: 64px
+	padding-bottom: 57px
+	.inline-el
+		width: 50%
+	.desc-head
+		text-align: left
+		padding-right: 75px
+	.description
+		text-align: justify
+		padding-left: 10px
+		p
+			color: #48576a
+			font-family: GothamPro
+			font-size: 16px
+			font-weight: 400
+			line-height: 24px
+			margin-top: 0
+			margin-bottom: 24px
+			span.red	
+				color: $red
+				font-weight: 700
+	&.type2
+		padding-bottom: 15px
+	&.story
+		background: #f6f6f6
+
+.reviews	
+	padding-top: 100px
+	padding-bottom: 40px
+	.image-holder
+		max-width: 40%
+	.text-holder
+		max-width: 60%
+		padding-left: 60px
+		h5
+			color: #48576a
+			font-size: 16px
+			text-transform: uppercase
+			margin-top: 0
+		p
+			color: #48576a
+			line-height: 24px
+		&.rt
+			padding-left: 0
+			padding-right: 60px
+		.btn-holder
+			margin-top: 60px
+
+.footer
+	padding-top: 60px
+	margin-top: 60px
+	.brand-holder
+		left: 0
+		top: 40px
+	.gotquestion
+		color: white
+		line-height: 20px
+		padding-left: 250px
+	.foot-menu,
+	.contacts
+		padding-left: 60px
+	h5
+		margin-top: 0
+		color: white
+		text-transform: uppercase
+	li
+		color: #ffffff
+		font-size: 14px
+		font-weight: 500
+		line-height: 20px
+		text-transform: uppercase
+	.contacts
+		color: #fff
+	.foot-socials
+		text-align: center
+		margin-top: 60px
+		li
+			display: inline-block
+			a
+				height: 40px
+				width: 40px
+				display: inline-block
+				margin: 5px
+				border: 1px solid #fff
+				display: inline-block
+				border-radius: 50%
+				text-align: center
+				font-size: 22px
+				padding-top: 8px
+	.copyright
+		text-align: center
+		color: white
+		font-size: 14px
+		margin-top: 60px
+		padding-bottom: 20px
+
+
+.counters
+	margin-top: 140px
+	.counters-bg
+		position: relative
+		background: url(../img/images/counters-bg.jpg) 50% 50%
+		background-size: cover
+		height: 600px
+		.counters-list
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translateX(-50%) translateY(-50%)
+			li
+				text-align: center
+				margin: 20px
+				.number
+					font-size: 70px
+					font-weight: 700
+					color: #ff5a5f
+				.description
+					color: #fff
+					text-transform: uppercase
+					font-size: 12px
+.boards
+	background: #fff
+	.content
+		width: 60%

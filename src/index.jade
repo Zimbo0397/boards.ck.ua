@@ -1,0 +1,161 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p!= text
+
+doctype html
+html(lang='en')
+	head
+		title Index
+
+		include ./partials/head.jade
+
+	body
+
+		section.top-line.index(style='background-image: url("img/images/index-bg.jpg")')
+			.brand-holder
+				a(href="#")
+					span boards.ck.ua
+			ul.main-nav-holder.inline-holder
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span борды
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span реклама в транспорте
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span печать банеров
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span дизайн
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span промоакции
+		
+			.description-in-top
+				h1.index Ваш бизнес наша реклама
+			.btn-holder
+				a(href="#").button Выбрать борд
+
+		section.counters
+			.main-container
+				h3.big 
+					| Качесвенная реклама
+					br
+					span.red   залог успешного бизнеса
+			.counters-bg
+				.shadow
+				ul.counters-list.inline-holder
+					li.inline-el
+						.number
+							span 1548
+						.description
+							span бордов
+					li.inline-el
+						.number
+							span 957
+						.description
+							span баннеров
+					li.inline-el
+						.number
+							span 2547
+						.description
+							span вывесок
+					li.inline-el
+						.number
+							span 5048
+						.description
+							span дизайнов
+
+		section.reviews
+			.main-container
+				h3.big 
+					|Реклама вашего бизнеса
+					br
+					span.red   на транспорте
+				.inline-holder
+					.image-holder.inline-el
+						img.fake-img(src="img/images/index-bus.jpg", alt="")
+						.img(style='background-image: url(img/images/index-bus.jpg)')
+					.text-holder.inline-el
+						h5 
+							|Мы предоставляем услуги размещения рекламы на транспорте
+						p
+							|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis excepturi iste veritatis beatae at earum rem, optio quasi atque, minus culpa esse eligendi, reiciendis, laborum placeat doloribus odio architecto porro! 
+						p
+							| Ipsa tempora, ipsam neque harum. Blanditiis obcaecati, commodi temporibus eum iste accusamus est molestiae odit nisi debitis ipsum dignissimos, tempore!	
+						.btn-holder
+							a(href="#").button Читать подбробнее
+
+		section.reviews
+			.main-container
+				h3.big 
+					|Печать баннеров
+					br
+					span.red   для размещения на бордах
+				.inline-holder
+					.text-holder.inline-el.rt
+						h5 
+							|Мы печатаем баннеры любой сложности
+						p
+							|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis excepturi iste veritatis beatae at earum rem, optio quasi atque, minus culpa esse eligendi, reiciendis, laborum placeat doloribus odio architecto porro! 
+						p
+							| Ipsa tempora, ipsam neque harum. Blanditiis obcaecati, commodi temporibus eum iste accusamus est molestiae odit nisi debitis ipsum dignissimos, tempore!	
+						.btn-holder
+							a(href="#").button Читать подбробнее
+					.image-holder.inline-el
+						img.fake-img(src="img/images/index-bus.jpg", alt="")
+						.img(style='background-image: url(img/images/bunner-print.jpg)')
+
+		section.reviews
+			.main-container
+				h3.big 
+					|Разработка дизайна
+					br
+					span.red   баннеров и вывесок
+				.inline-holder
+					.image-holder.inline-el
+						img.fake-img(src="img/images/index-bus.jpg", alt="")
+						.img(style='background-image: url(img/images/design.jpg)')
+					.text-holder.inline-el
+						h5 
+							|Хороший дизайн залог успешной рекламы
+						p
+							|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis excepturi iste veritatis beatae at earum rem, optio quasi atque, minus culpa esse eligendi, reiciendis, laborum placeat doloribus odio architecto porro! 
+						p
+							| Ipsa tempora, ipsam neque harum. Blanditiis obcaecati, commodi temporibus eum iste accusamus est molestiae odit nisi debitis ipsum dignissimos, tempore!	
+						.btn-holder
+							a(href="#").button Читать подбробнее
+							
+
+											
+		
+
+
+
+														
+														
+
+
+
+
+
+
+
+
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+		include ./partials/scripts.jade

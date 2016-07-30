@@ -1,0 +1,105 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p!= text
+
+doctype html
+html(lang='en')
+	head
+		title boards-filter
+
+		include ./partials/head.jade
+
+	body
+
+		section.top-line(style='background-image: url("img/images/footer-bg.jpg")')
+			.brand-holder
+				a(href="#")
+					span boards.ck.ua
+			ul.main-nav-holder.inline-holder
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span борды
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span реклама в транспорте
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span печать банеров
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span дизайн
+				li.inline-el
+					a(href="#" class='callback-holder inline-el')
+						span промоакции
+		
+		section.boards
+			.content
+				.filters-holder
+					ul
+						li
+							label(for="#boardstype") тип:
+							select#boardstype(name="boardstype")
+								option(value="all") все
+								option(value="bords") Борды
+								option(value="prismatrons") призматроны
+						li
+							label(for="#side") сторона:
+							select#side(name="side")
+								option(value="a") a
+								option(value="a1") a1
+								option(value="a2") a2
+								option(value="a3") a3
+								option(value="b") b
+						li
+							label(for="#street") улица:
+							select#street(name="street")
+								option(value="1") ул. Крещатик
+								option(value="2") ул. Университетская
+								option(value="3") бул. Шевченко
+								option(value="a3") ул. Одесская
+								option(value="b") ул. Гагарина,55
+								option(value="b") ул.Ленина
+								option(value="b") ул. Благовесная
+								option(value="b") ул. 30 лет Победы
+								option(value="b") ул. Энгельса
+						li
+							label(for="#rans") раен:
+							select#rans(name="rans")
+								option(value="a") ОЗР
+								option(value="a1") центральный
+								option(value="a2") казбет
+								option(value="a3") раен д
+								option(value="b") мытница
+								option(value="b") Химпоселок
+								option(value="b") Луначарского
+								option(value="b") 700-летия
+								option(value="b") зеленая
+								option(value="b") школьная
+						li
+							label(for="#price1") от
+							input#price1(type="text" readonly)
+							label(for="#price2") до
+							input#price2(type="text" readonly)
+							#price-slider
+
+
+
+	
+
+
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+		include ./partials/scripts.jade
