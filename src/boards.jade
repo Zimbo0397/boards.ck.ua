@@ -13,7 +13,7 @@ html(lang='en')
 
 		include ./partials/head.jade
 
-	body
+	body.spin-open
 
 		section.top-line(style='background-image: url("img/images/footer-bg.jpg")')
 			.brand-holder
@@ -37,54 +37,147 @@ html(lang='en')
 						span промоакции
 		
 		section.boards
-			.content
-				.filters-holder
-					ul
+			.inline-holder
+				.content.inline-el
+					.filters-holder
+						ul
+							.slider-bg
+							li
+								.filters-item
+									label(for="#side") Cторона:
+									.select-holder
+										select#side(name="side")
+											option(value="a") a
+											option(value="a1") a1
+											option(value="a2") a2
+											option(value="a3") a3
+											option(value="b") b
+								.filters-item
+									label(for="#boardstype") Тип:
+									.select-holder
+										select#boardstype(name="boardstype")
+											option(value="all") все
+											option(value="bords") Борды
+											option(value="prismatrons") призматроны
+							li
+								.filters-item
+									label(for="#street") Улица:
+									.select-holder
+										select#street(name="street")
+											option(value="1") ул. Крещатик
+											option(value="2") ул. Университетская
+											option(value="3") бул. Шевченко
+											option(value="a3") ул. Одесская
+											option(value="b") ул. Гагарина,55
+											option(value="b") ул.Ленина
+											option(value="b") ул. Благовесная
+											option(value="b") ул. 30 лет Победы
+											option(value="b") ул. Энгельса
+								.filters-item
+									label(for="#rans") Раен:
+									.select-holder
+										select#rans(name="rans")
+											option(value="a") ОЗР
+											option(value="a1") центральный
+											option(value="a2") казбет
+											option(value="a3") раен д
+											option(value="b") мытница
+											option(value="b") Химпоселок
+											option(value="b") Луначарского
+											option(value="b") 700-летия
+											option(value="b") зеленая
+											option(value="b") школьная
+							li.slider
+								.filters-item
+									label(for="#price1") Цена:
+									input#price1(type="text" readonly)
+									input#price2(type="text" readonly)
+									.slider-holder
+										#price-slider
+					
+					.btn-holder
+						a.button(href="#") очистить фильтры (0)
+					ul.boards-list.inline-holder
+						mixin newboarditem(src, src1, price, description)
+							li.board-item.inline-el
+								.foto-content
+									.image-holder
+										img.fake-img(src= src, alt= src)
+										.img(style='background-image: url( '+src+')')
+									.minipics.image-holder
+										img.fake-img(src= src1, alt= src1)
+										.img(style='background-image: url( '+src1+')')
+									.price-holder
+										span= price
+								.text-content
+									.description
+										span= description
+						+newboarditem(
+							'img/images/board-1.jpg',
+							'img/images/minipic-1.png',
+							'3000',
+							'бул. Шевченко / ул. Г. Сталинграда'
+						)
+						+newboarditem(
+							'img/images/board-2.jpg',
+							'img/images/minipic-2.png',
+							'1900',
+							'ул. Смелянская / ул. 30 лет Победы (крайний справа)'
+						)
+						+newboarditem(
+							'img/images/board-3.jpg',
+							'img/images/minipic-3.png',
+							'1900',
+							'ул.Ильина / ул.Б.Хмельницкого'
+						)
+						+newboarditem(
+							'img/images/board-4.jpg',
+							'img/images/minipic-4.png',
+							'3000',
+							' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева'
+						)
+						+newboarditem(
+							'img/images/board-1.jpg',
+							'img/images/minipic-1.png',
+							'3000',
+							'бул. Шевченко / ул. Г. Сталинграда'
+						)
+						+newboarditem(
+							'img/images/board-2.jpg',
+							'img/images/minipic-2.png',
+							'1900',
+							'ул. Смелянская / ул. 30 лет Победы (крайний справа)'
+						)
+						+newboarditem(
+							'img/images/board-3.jpg',
+							'img/images/minipic-3.png',
+							'1900',
+							'ул.Ильина / ул.Б.Хмельницкого'
+						)
+						+newboarditem(
+							'img/images/board-4.jpg',
+							'img/images/minipic-4.png',
+							'3000',
+							' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева'
+						)
+
+					ul.pagination
 						li
-							label(for="#boardstype") тип:
-							select#boardstype(name="boardstype")
-								option(value="all") все
-								option(value="bords") Борды
-								option(value="prismatrons") призматроны
+							a(href="#") 1
 						li
-							label(for="#side") сторона:
-							select#side(name="side")
-								option(value="a") a
-								option(value="a1") a1
-								option(value="a2") a2
-								option(value="a3") a3
-								option(value="b") b
+							a(href="#") 10
 						li
-							label(for="#street") улица:
-							select#street(name="street")
-								option(value="1") ул. Крещатик
-								option(value="2") ул. Университетская
-								option(value="3") бул. Шевченко
-								option(value="a3") ул. Одесская
-								option(value="b") ул. Гагарина,55
-								option(value="b") ул.Ленина
-								option(value="b") ул. Благовесная
-								option(value="b") ул. 30 лет Победы
-								option(value="b") ул. Энгельса
+							a.active(href="#") 15
 						li
-							label(for="#rans") раен:
-							select#rans(name="rans")
-								option(value="a") ОЗР
-								option(value="a1") центральный
-								option(value="a2") казбет
-								option(value="a3") раен д
-								option(value="b") мытница
-								option(value="b") Химпоселок
-								option(value="b") Луначарского
-								option(value="b") 700-летия
-								option(value="b") зеленая
-								option(value="b") школьная
+							a(href="#") 20
 						li
-							label(for="#price1") от
-							input#price1(type="text" readonly)
-							label(for="#price2") до
-							input#price2(type="text" readonly)
-							#price-slider
+							a(href="#") 25
+						li
+							a(href="#") 30
+
+				.map-holder.inline-el
+					#map
+
 
 
 
@@ -95,6 +188,9 @@ html(lang='en')
 
 
 
+		#spiner
+			.sp-bg
+			i.fa.fa-refresh(aria-hidden="true")
 
 		include ./partials/footer.jade
 
