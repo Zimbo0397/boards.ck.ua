@@ -18,7 +18,7 @@ html(lang='en')
 		section.top-line(style='background-image: url("img/images/footer-bg.jpg")')
 			.brand-holder
 				a(href="#")
-					span boards.ck.ua
+					span brix.ck.ua
 			ul.main-nav-holder.inline-holder
 				li.inline-el
 					a(href="#" class='callback-holder inline-el')
@@ -97,69 +97,89 @@ html(lang='en')
 					
 					.btn-holder
 						a.button(href="#") очистить фильтры (0)
+
+					hr
+
 					ul.boards-list.inline-holder
-						mixin newboarditem(src, src1, price, description)
-							li.board-item.inline-el
-								.foto-content
-									.image-holder
-										img.fake-img(src= src, alt= src)
-										.img(style='background-image: url( '+src+')')
-									.minipics.image-holder
-										img.fake-img(src= src1, alt= src1)
-										.img(style='background-image: url( '+src1+')')
-									.price-holder
-										span= price
-								.text-content
-									.description
-										span= description
-						+newboarditem(
-							'img/images/board-1.jpg',
-							'img/images/minipic-1.png',
-							'3000',
-							'бул. Шевченко / ул. Г. Сталинграда'
-						)
-						+newboarditem(
-							'img/images/board-2.jpg',
-							'img/images/minipic-2.png',
-							'1900',
-							'ул. Смелянская / ул. 30 лет Победы (крайний справа)'
-						)
-						+newboarditem(
-							'img/images/board-3.jpg',
-							'img/images/minipic-3.png',
-							'1900',
-							'ул.Ильина / ул.Б.Хмельницкого'
-						)
-						+newboarditem(
-							'img/images/board-4.jpg',
-							'img/images/minipic-4.png',
-							'3000',
-							' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева'
-						)
-						+newboarditem(
-							'img/images/board-1.jpg',
-							'img/images/minipic-1.png',
-							'3000',
-							'бул. Шевченко / ул. Г. Сталинграда'
-						)
-						+newboarditem(
-							'img/images/board-2.jpg',
-							'img/images/minipic-2.png',
-							'1900',
-							'ул. Смелянская / ул. 30 лет Победы (крайний справа)'
-						)
-						+newboarditem(
-							'img/images/board-3.jpg',
-							'img/images/minipic-3.png',
-							'1900',
-							'ул.Ильина / ул.Б.Хмельницкого'
-						)
-						+newboarditem(
-							'img/images/board-4.jpg',
-							'img/images/minipic-4.png',
-							'3000',
-							' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева'
-						)
+						//- mixin newboarditem(src, src1, price, description, dataid, datatype)
+						//- 	a.board(href="#", data-id= dataid, data-type= datatype)
+						//- 		li.board-item.inline-el
+						//- 			.foto-content
+						//- 				.image-holder
+						//- 					img.fake-img(src= src, alt= src)
+						//- 					.img(style='background-image: url( '+src+')')
+						//- 				.minipics.image-holder
+						//- 					img.fake-img(src= src1, alt= src1)
+						//- 					.img(style='background-image: url( '+src1+')')
+						//- 				.price-holder
+						//- 					span= price
+						//- 			.text-content
+						//- 				.description
+						//- 					span= description
+						//- +newboarditem(
+						//- 	'img/images/board-1.jpg',
+						//- 	'img/images/minipic-1.png',
+						//- 	'3000',
+						//- 	'бул. Шевченко / ул. Г. Сталинграда',
+						//- 	'1',
+						//- 	'a'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-2.jpg',
+						//- 	'img/images/minipic-2.png',
+						//- 	'1900',
+						//- 	'ул. Смелянская / ул. 30 лет Победы (крайний справа)',
+						//- 	'2',
+						//- 	'a1'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-3.jpg',
+						//- 	'img/images/minipic-3.png',
+						//- 	'1900',
+						//- 	'ул.Ильина / ул.Б.Хмельницкого',
+						//- 	'3',
+						//- 	'a2'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-4.jpg',
+						//- 	'img/images/minipic-4.png',
+						//- 	'3000',
+						//- 	' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева',
+						//- 	'4',
+						//- 	'a3'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-1.jpg',
+						//- 	'img/images/minipic-1.png',
+						//- 	'3000',
+						//- 	'бул. Шевченко / ул. Г. Сталинграда',
+						//- 	'5',
+						//- 	'b'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-2.jpg',
+						//- 	'img/images/minipic-2.png',
+						//- 	'1900',
+						//- 	'ул. Смелянская / ул. 30 лет Победы (крайний справа)',
+						//- 	'6',
+						//- 	'a'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-3.jpg',
+						//- 	'img/images/minipic-3.png',
+						//- 	'1900',
+						//- 	'ул.Ильина / ул.Б.Хмельницкого',
+						//- 	'7',
+						//- 	'a1'
+						//- )
+						//- +newboarditem(
+						//- 	'img/images/board-4.jpg',
+						//- 	'img/images/minipic-4.png',
+						//- 	'3000',
+						//- 	' Въезд в Черкассы из Киева, со стороны г.Золотоноша, слева',
+						//- 	'8',
+						//- 	'a2'
+						//- )
 
 					ul.pagination
 						li
