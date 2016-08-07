@@ -47,6 +47,7 @@ html(lang='en')
 									label(for="#side") Cторона:
 									.select-holder
 										select#side(name="side")
+											option(value="", selected) выбрать
 											option(value="a") a
 											option(value="a1") a1
 											option(value="a2") a2
@@ -56,37 +57,39 @@ html(lang='en')
 									label(for="#boardstype") Тип:
 									.select-holder
 										select#boardstype(name="boardstype")
-											option(value="all") все
-											option(value="bords") Борды
-											option(value="prismatrons") призматроны
+											option(value="", selected) выбрать
+											option(value="board") Борды
+											option(value="prismatron") призматроны
 							li
 								.filters-item
 									label(for="#street") Улица:
 									.select-holder
 										select#street(name="street")
-											option(value="1") ул. Крещатик
-											option(value="2") ул. Университетская
-											option(value="3") бул. Шевченко
-											option(value="a3") ул. Одесская
-											option(value="b") ул. Гагарина,55
-											option(value="b") ул.Ленина
-											option(value="b") ул. Благовесная
-											option(value="b") ул. 30 лет Победы
-											option(value="b") ул. Энгельса
+											option(value="", selected) выбрать
+											option(value="kresch") ул. Крещатик
+											option(value="univers") ул. Университетская
+											option(value="bul_shev") бул. Шевченко
+											option(value="odess") ул. Одесская
+											option(value="gagarina_55") ул. Гагарина,55
+											option(value="lenin") ул.Ленина
+											option(value="blagoves") ул. Благовесная
+											option(value="pobed_30") ул. 30 лет Победы
+											option(value="engels") ул. Энгельса
 								.filters-item
 									label(for="#rans") Раен:
 									.select-holder
 										select#rans(name="rans")
-											option(value="a") ОЗР
-											option(value="a1") центральный
-											option(value="a2") казбет
-											option(value="a3") раен д
-											option(value="b") мытница
-											option(value="b") Химпоселок
-											option(value="b") Луначарского
-											option(value="b") 700-летия
-											option(value="b") зеленая
-											option(value="b") школьная
+											option(value="", selected) выбрать
+											option(value="uzr") ОЗР
+											option(value="center") центральный
+											option(value="kazbet") казбет
+											option(value="rans_d") раен д
+											option(value="mutniza") мытница
+											option(value="himpass") Химпоселок
+											option(value="lunachr") Луначарского
+											option(value="700_let") 700-летия
+											option(value="green") зеленая
+											option(value="scooling") школьная
 							li.slider
 								.filters-item
 									label(for="#price1") Цена:
@@ -96,7 +99,7 @@ html(lang='en')
 										#price-slider
 					
 					.btn-holder
-						a.button(href="#") очистить фильтры (0)
+						a#clearFilters.button(href="#") фильтры (0)
 
 					hr
 
