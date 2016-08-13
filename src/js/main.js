@@ -6,55 +6,13 @@ $(window).on('load', function() {
 
 
 
-function initMap() {
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 49.4291698, lng: 32.0708611},
-      zoom: 14
-    });
-    setMarkers(map);
-  }
-
 var boards = [
-  ['board1',  49.4352363, 32.0615881, 4],
-  ['board2', 49.4367536, 32.0634452, 5],
-  ['board3', 49.4376549, 32.0648005, 3],
-  ['board4', 49.4350067, 32.0662796, 2],
-  ['board5', 49.4340469, 32.0684313, 1]
+  ['board1',  49.4352363, 32.0615881, 4, 1],
+  ['board2', 49.4367536, 32.0634452, 5, 2],
+  ['board3', 49.4376549, 32.0648005, 3, 3],
+  ['board4', 49.4350067, 32.0662796, 2, 4],
+  ['board5', 49.4340469, 32.0684313, 1, 5]
 ];
-
-function setMarkers(map) {
-  var image = {
-    url: 'img/icons/board-icon.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 20),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-  for (var i = 0; i < boards.length; i++) {
-    var board = boards[i];
-    var marker = new google.maps.Marker({
-      position: {lat: board[1], lng: board[2]},
-      map: map,
-      icon: image,
-      shape: shape,
-      title: board[0],
-      zIndex: board[3]
-    });
-  }
-}
-
-
-
 
 var boardsOute = [
   { src:'img/images/board-1.jpg',
@@ -66,7 +24,12 @@ var boardsOute = [
     dataType: 'board',
     street: 'bul_shev',
     rans: 'uzr',
-    domState: true
+    domState: true,
+    lat: 49.4332363,
+    lng: 32.0615881,
+    indexZ: 1,
+    mapId: 1
+
   },
   {
     src: 'img/images/board-2.jpg',
@@ -78,7 +41,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'odess',
     rans: 'center',
-    domState: true
+    domState: true,
+    lat: 49.4152463,
+    lng: 32.0615581,
+    indexZ: 2,
+    mapId: 2
   },
   {
     src: 'img/images/board-3.jpg',
@@ -90,7 +57,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'gagarina_55',
     rans: 'kazbet',
-    domState: true
+    domState: true,
+    lat: 49.4252353,
+    lng: 32.0615861,
+    indexZ: 3,
+    mapId: 3
   },
   {
     src: 'img/images/board-4.jpg',
@@ -102,7 +73,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'lenin',
     rans: 'rans_d',
-    domState: true
+    domState: true,
+    lat: 49.4452163,
+    lng: 32.0615581,
+    indexZ: 4,
+    mapId: 4
   },
   {
     src: 'img/images/board-1.jpg',
@@ -113,7 +88,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'blagoves',
     rans: 'mutniza',
-    domState: true
+    domState: true,
+    lat: 49.4552303,
+    lng: 32.0615821,
+    indexZ: 5,
+    mapId: 5
   },
   {
     src: 'img/images/board-4.jpg',
@@ -125,7 +104,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'pobed_30',
     rans: 'himpass',
-    domState: true
+    domState: true,
+    lat: 49.4352333,
+    lng: 32.0615841,
+    indexZ: 6,
+    mapId: 6
   },
     { src:'img/images/board-1.jpg',
     src2:'img/images/minipic-1.png',
@@ -136,7 +119,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'engels',
     rans: 'lunachr',
-    domState: true
+    domState: true,
+    lat: 49.4652263,
+    lng: 32.0615181,
+    indexZ: 7,
+    mapId: 7
   },
   {
     src: 'img/images/board-2.jpg',
@@ -148,7 +135,11 @@ var boardsOute = [
     dataType: 'prismatron',
     street: 'pobed_30',
     rans: '700_let',
-    domState: true
+    domState: true,
+    lat: 49.4752263,
+    lng: 32.0615481,
+    indexZ: 8,
+    mapId: 8
   },
   {
     src: 'img/images/board-3.jpg',
@@ -160,7 +151,11 @@ var boardsOute = [
     dataType: 'prismatron',
     street: 'bul_shev',
     rans: 'green',
-    domState: true
+    domState: true,
+    lat: 49.4851363,
+    lng: 32.0645881,
+    indexZ: 9,
+    mapId: 9
   },
   {
     src: 'img/images/board-4.jpg',
@@ -172,7 +167,11 @@ var boardsOute = [
     dataType: 'prismatron',
     street: 'lenin',
     rans: 'scooling',
-    domState: true
+    domState: true,
+    lat: 49.4942363,
+    lng: 32.0665881,
+    indexZ: 10,
+    mapId: 10
   },
   {
     src: 'img/images/board-1.jpg',
@@ -183,7 +182,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'univers',
     rans: 'kazbet',
-    domState: true
+    domState: true,
+    lat: 49.4361363,
+    lng: 32.0614881,
+    indexZ: 11,
+    mapId: 11
   },
   {
     src: 'img/images/board-4.jpg',
@@ -195,7 +198,11 @@ var boardsOute = [
     dataType: 'board',
     street: 'kresch',
     rans: 'uzr',
-    domState: true
+    domState: true,
+    lat: 49.4372353,
+    lng: 32.0615871,
+    indexZ: 12,
+    mapId: 12
   }
 ];
 
@@ -268,44 +275,63 @@ var createElements = function() {
       dataid = boardsOute[i].dataid,
       side = boardsOute[i].side,
       domState = boardsOute[i].domState,
-      newEl = '<a href="#" data-id="'+dataid+'" data-type="'+side+'" class="board"><li class="board-item inline-el"><div class="foto-content"><div class="image-holder"><img src="'+src+'" alt="'+src+'" class="fake-img"><div style="background-image: url('+src+')" class="img"></div></div><div class="minipics image-holder"><img src="'+src2+'" alt="'+src2+'" class="fake-img"><div style="background-image: url( '+src2+')" class="img"></div></div><div class="price-holder"><span>'+price+'</span></div></div><div class="text-content"><div class="description"><span>'+description+'</span></div></div></li></a>';
-      $('.board').remove();
+      lat = boardsOute[i].lat,
+      lng = boardsOute[i].lng,
+      zIndex = boardsOute[i].indexZ,
+      newEl = '<a href="#" zIndex="'+zIndex+'" lat="'+lat+'" lng="'+lng+'" data-id="'+dataid+'" data-type="'+side+'" class="board open"><li class="board-item inline-el"><div class="foto-content"><div class="image-holder"><img src="'+src+'" alt="'+src+'" class="fake-img"><div style="background-image: url('+src+')" class="img"></div></div><div class="minipics image-holder"><img src="'+src2+'" alt="'+src2+'" class="fake-img"><div style="background-image: url( '+src2+')" class="img"></div></div><div class="price-holder"><span>'+price+'</span></div></div><div class="text-content"><div class="description"><span>'+description+'</span></div></div></li></a>';
     if(domState) {
       elements.push(newEl)
     }
     boardsOute[i].domState = true;
   }
   $('.boards-list').html(elements)
+
 }
+
+
+
+  $('.board').each(function() {
+    $(this).addClass('open')
+  })
 
 $('#side').on('change', function () {
     filtersObj.side = $(this).val();
     makeFilters();
     createElements();
-    console.log(boardsOute)
+    cleanSliderItems();
+    formSliderItems();
       
 });
 $('#boardstype').on('change', function () {
     filtersObj.dataType = $(this).val();
     makeFilters();
     createElements();
-    console.log(boardsOute)
+    formSliderItems();
       
 })
 $('#street').on('change', function () {
     filtersObj.street = $(this).val();
     makeFilters();
     createElements();
-    console.log(boardsOute)
+    cleanSliderItems();
+    formSliderItems();
       
 })
 $('#rans').on('change', function () {
     filtersObj.rans = $(this).val();
     makeFilters();
     createElements();
+    cleanSliderItems();
+    formSliderItems();
 })
+function clearHtmlFilters() {
+  $('.filters-holder .select-holder select').each(function() {
+    $(this).val('');
+  })
+}
 $('#clearFilters').on('click', function (e) {
     e.preventDefault();
+    clearHtmlFilters();
     filtersObj = {
       priceLeft: 0,
       priceRight: 0,
@@ -319,7 +345,13 @@ $('#clearFilters').on('click', function (e) {
     createElements();
     UpfiltersState();
     displayFiltersState();
+    cleanSliderItems();
+    formSliderItems();
+    $( "#price1" ).val( $( "#price-slider" ).slider( "values", 0 ));
+    $( "#price2" ).val( $( "#price-slider" ).slider( "values", 1 ) );
 })
+
+createElements();
 
 $( function() {
     $( "#price-slider" ).slider({
@@ -336,10 +368,162 @@ $( function() {
         filtersObj.priceRight = $( "#price-slider" ).slider( "values", 1 );
         makeFilters();
         createElements();
+        deleteMarkers();
+        updateMarkers();
+        cleanSliderItems();
+        formSliderItems();
       }
     });
     $( "#price1" ).val( $( "#price-slider" ).slider( "values", 0 ));
     $( "#price2" ).val( $( "#price-slider" ).slider( "values", 1 ) );
 } );
 
-createElements()
+function resetSliderRange() {
+  var $slider = $("#price-slider");
+    $slider.slider("values", 0, 1900);
+    $slider.slider("values", 1, 300);
+}
+
+
+var map,
+    markers = [];
+
+function addMarker(bLat, bLng, bTitle, bZindex) {
+  var image = {
+    url: 'img/icons/1.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 20),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  },
+  image2 = {
+    url: 'img/icons/2.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 20),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  };
+
+  var shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  };
+
+  var marker = new google.maps.Marker({
+      position: {lat: bLat, lng: bLng},
+      map: map,
+      icon: image,
+      animation: google.maps.Animation.DROP,
+      shape: shape,
+      title: bTitle,
+      zIndex: bZindex
+    });
+  markers.push(marker);
+}
+
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+function updateMarkers() {
+  $('.board').each(function() {
+    var $board = $(this),
+        bLat = parseFloat($board.attr('lat')),
+        bLng = parseFloat($board.attr('lng')),
+        bTitle = $board.find('.description span').text(),
+        bZindex = parseInt($board.attr('zIndex'));
+    addMarker(bLat, bLng, bTitle, bZindex);
+  })
+}
+
+
+function deleteMarkers() {
+  setMapOnAll(null);
+  markers = [];
+}
+
+function initMap() {
+    // Create a map object and specify the DOM element for display.
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 49.4291698, lng: 32.0708611},
+      zoom: 14
+    });
+
+  // setMarkers(map);
+  updateMarkers();
+
+  $('#side').on('change', function () {
+     deleteMarkers();
+      updateMarkers();
+  });
+  $('#boardstype').on('change', function () {
+     deleteMarkers();
+      updateMarkers();
+  })
+  $('#street').on('change', function () {
+     deleteMarkers();
+      updateMarkers();
+  })
+  $('#rans').on('change', function () {
+     deleteMarkers();
+      updateMarkers();
+  })
+  $('#clearFilters').on('click', function (e) {
+     deleteMarkers();
+      updateMarkers();
+  })
+}
+
+var slides = [];
+function initSliderModal() {
+  var slidesTarget = $('.news-slider');
+  $(slidesTarget).html(slides);
+};
+
+var bSlider = $('.news-slider').bxSlider({
+      mode: 'fade',
+      speed: 200
+})
+
+
+
+function cleanSliderItems() {
+  slides = [];
+};
+function formSliderItems() {
+  var slidesCounter = 0;
+  $('.board').each(function() {
+      $(this).attr('counter', ''+slidesCounter+'');
+      var $this = $(this),
+          img = $this.find('.image-holder img').attr('src'),
+          h5 = $this.find('.description span').text(),
+          num = parseInt($this.attr('counter')),
+          slide  = '<li><div class="image-holder"><img src="'+img+'" alt="" class="fake-img"><div style="background-image: url('+img+')" class="img"></div></div><div class="text-holder"><div class="description"><h5>'+h5+'</h5><p>CrewInspector an online ship crew management system provider has been chosen by BachmannHR Group Ltd to integrate crewing process across the group of companies. Crewing software allows employees to maintain crew data, prepare crew employment contracts and share data easily with rest of the teams residing in different geographic locations at single access point without having any additional software to install. An overview of crew certificate expiry enables to keep the information up to date and to initiate any training activities for respective crew members as soon as required.</p></div></div></li>';
+          slides.push(slide)
+    $this.on('click', function(e) {
+      var slidesCount = slidesCounter;
+      e.preventDefault();
+      initSliderModal();
+      bSlider.reloadSlider();
+      $('.main-modal').addClass('open');
+      $('body').addClass('blackshadow');
+      bSlider.goToSlide(num);
+    })
+    slidesCounter ++;
+  })
+}
+
+formSliderItems();
+
+$('#newsModalClose').on('click', function() {
+  $('.main-modal').removeClass('open');
+  $('body').removeClass('blackshadow');
+})
+
+
