@@ -1,0 +1,94 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p!= text
+
+doctype html
+html(lang='en')
+	head
+		title boards-filter
+
+		include ./partials/head.jade
+
+	body.spin-open
+
+		section.top-line(style='background-image: url("img/images/bus-bg.jpg")')
+			include ./partials/top-line-content.jade
+		
+		section.transport-adver
+			.main-container
+				h3.big Размещение рекламы 
+					br
+					span.red в транспорте
+				.info-block.inline-holder
+					.image-holder.inline-el
+						img(src="img/images/laz-1.jpg", alt="").fake-img
+						.img(style='background-image: url("img/images/laz-1.jpg")')
+					.text-holder.inline-el
+						h4  Реклама в/на транспорте
+						ul
+							li Разработаем макет
+							li Изготовим листовки
+							li Разместим и предоставим отчет
+							li Проконтролируем наличие листовок в течении всего срока аренды
+						.price
+							table
+								tr
+									td Размещения 1-й листовки
+									td Стоимость  = 1 грн в день
+						p
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dicta aliquam atque harum pariatur nisi alias, tempore sequi saepe laborum veniam tenetur doloremque vitae odio, hic beatae! Sunt provident error eius deleniti odit ratione na.
+				.info-block.inline-holder
+					.text-holder.left.inline-el
+						h4  Реклама на маршрутных автобусах
+						ul
+							li Подберем маршрутную программу
+							li Разработаем макет, изготовим материал для поклейки
+							li Оформим автобус
+							li Предоставим фотоотчет
+						.price
+							table
+								tr
+									td Aренда 6 мес
+									td 1 автобус = 1600 грн/мес
+								tr
+									td Аренда 12 мес
+									td 1 автобус = 1300 грн/мес
+
+						p
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dicta aliquam atque harum pariatur nisi alias, tempore sequi saepe laborum veniam tenetur doloremque vitae odio, hic beatae! Sunt provident error eius deleniti odit ratione natus. Vero quam ipsam illum aliquam, nobis cum sed libero doloribus, facilis pariatur beatae unde ipsum eum minus molestiae accusamus dicta maxime sunt facere similique aperiam quidem ut! Quasi nemo neque similique possimus ducimus tenetur, consequatur molestiae excepturi ullam, quibusdam iure aspernatur, adipisci fugit, molestias nam ex laborum recusandae pariatur numquam perferendis. Quos, facere, architecto. Cum maiores, assumenda natus nisi perferendis ad dolores commodi aperiam sed.
+					.image-holder.inline-el
+						img(src="img/images/laz-1.jpg", alt="").fake-img
+						.img(style='background-image: url("img/images/inside_bus.jpg")')
+				.info-block.inline-holder
+					.image-holder.inline-el
+						img(src="img/images/laz-1.jpg", alt="").fake-img
+						.img(style='background-image: url("img/images/bogdan-1.jpg")')
+					.text-holder.inline-el
+						h4  Lorem ipsum dolor sit amet.
+						p
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dicta aliquam atque harum pariatur nisi alias, tempore sequi saepe laborum veniam tenetur doloremque vitae odio, hic beatae! Sunt provident error eius deleniti odit ratione natus. Vero quam ipsam illum aliquam, nobis cum sed libero doloribus, facilis pariatur beatae unde ipsum eum minus molestiae accusamus dicta maxime sunt facere similique aperiam quidem ut! Quasi nemo neque similique possimus ducimus tenetur, consequatur molestiae excepturi ullam, quibusdam iure aspernatur, adipisci fugit, molestias nam ex laborum recusandae pariatur numquam perferendis. Quos, facere, architecto. Cum maiores, assumenda natus nisi perferendis ad dolores commodi aperiam sed.
+
+
+	
+
+
+
+
+
+
+		#spiner
+			.sp-bg
+			i.fa.fa-refresh(aria-hidden="true")
+
+		include ./partials/footer.jade
+		include ./partials/slider-modal.jade
+
+
+
+
+
+		include ./partials/scripts.jade

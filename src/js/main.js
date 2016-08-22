@@ -216,6 +216,8 @@ var elements = [],
       street: '',
       rans: ''
     };
+
+var changeMarkersIcon;
 var UpfiltersState = function () {
   for (var prop in filtersObj) {
       if(filtersObj[prop]) {
@@ -399,14 +401,14 @@ function addMarker(bLat, bLng, bTitle, bZindex) {
     anchor: new google.maps.Point(0, 32)
   },
   image2 = {
-    url: 'img/icons/2.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 20),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
+      url: 'img/icons/2.png',
+      // This marker is 20 pixels wide by 32 pixels high.
+      size: new google.maps.Size(20, 20),
+      // The origin for this image is (0, 0).
+      origin: new google.maps.Point(0, 0),
+      // The anchor for this image is the base of the flagpole at (0, 32).
+      anchor: new google.maps.Point(0, 32)
+    };
 
   var shape = {
     coords: [1, 1, 1, 20, 18, 20, 18, 1],
@@ -423,6 +425,21 @@ function addMarker(bLat, bLng, bTitle, bZindex) {
       zIndex: bZindex
     });
   markers.push(marker);
+  changeMarkersIcon = function() {
+      $('.board').each(function() {
+      $(this).on('mouseenter', function() {
+            var thisId = parseInt($(this).attr('data-id'))
+                markers[thisId].setIcon(image2);
+          })
+      });
+      $('.board').each(function() {
+          $(this).on('mouseleave', function() {
+            var thisId = parseInt($(this).attr('data-id'))
+                markers[thisId].setIcon(image);
+          })
+      });
+  };
+  changeMarkersIcon();
 }
 
 function setMapOnAll(map) {
@@ -454,12 +471,12 @@ function initMap() {
       center: {lat: 49.4291698, lng: 32.0708611},
       zoom: 14
     });
-
   // setMarkers(map);
   updateMarkers();
 
+
   $('#side').on('change', function () {
-     deleteMarkers();
+      deleteMarkers();
       updateMarkers();
   });
   $('#boardstype').on('change', function () {

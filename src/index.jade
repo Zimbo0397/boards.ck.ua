@@ -16,25 +16,8 @@ html(lang='en')
 	body
 
 		section.top-line.index(style='background-image: url("img/images/index-bg.jpg")')
-			.brand-holder
-				a(href="#")
-					span brix.ck.ua
-			ul.main-nav-holder.inline-holder
-				li.inline-el
-					a(href="#" class='callback-holder inline-el')
-						span борды
-				li.inline-el
-					a(href="#" class='callback-holder inline-el')
-						span реклама в транспорте
-				li.inline-el
-					a(href="#" class='callback-holder inline-el')
-						span печать банеров
-				li.inline-el
-					a(href="#" class='callback-holder inline-el')
-						span дизайн
-				li.inline-el
-					a(href="#" class='callback-holder inline-el')
-						span промоакции
+			include ./partials/top-line-content.jade
+			
 		
 			.description-in-top
 				h1.index Ваш бизнес наша реклама

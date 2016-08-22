@@ -212,6 +212,8 @@ ul.pagination
 	width: 100%
 	margin: 0 auto
 	position: relative
+	padding-left: 40px
+	padding-right: 40px
 	@media (max-width: $medium)
 		padding-left: 15px	
 		padding-right: 15px
@@ -331,10 +333,10 @@ body
 			text-align: center
 			height: 60px
 			padding: 18px 11px
-			transition: color .2s
+			transition: background .2s, color .2s
 			&:hover
-				color: $red
-				transition: color .2s
+				background: $red
+				transition: background .2s, color .2s
 
 	.callback-holder
 		padding-right: 17px
@@ -705,3 +707,54 @@ body
 				text-align: left
 				.tittle
 					margin-top: 20px
+
+.transport-adver
+	padding-top: 60px
+	.info-block
+		margin-bottom: 40px
+		.image-holder
+			width: 40%
+		.text-holder
+			width: 60%
+			padding-left: 40px
+			&.left
+				padding-left: 0
+				padding-right: 40px
+			h4
+				top: -4px
+				line-height: 30px
+				margin-bottom: 0px
+				position: relative
+
+			ul 
+				padding-left: 20px
+				li
+					text-transform: uppercase
+					color: #ff5a5f
+					margin-bottom: 5px
+					position: relative
+					&:after
+						content: ''
+						position: absolute
+						left: -19px
+						top: 7px
+						height: 2px
+						width: 11px
+						background: $red
+			.price
+				table
+					border-collapse: collapse
+					color: $red
+					th,td
+						border: 1px solid $red
+						padding: 5px
+			// 	padding: 10px
+			// 	display: inline-block
+			// 	border: 2px solid #f3a4a7
+			// 	color: #fff
+			// 	text-transform: uppercase
+			// 	background: #f3a4a7
+			// 	span
+			// 		display: block
+			// 		margin-bottom: 2px
+			// 		margin-top: 2px
